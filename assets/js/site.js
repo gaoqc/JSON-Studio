@@ -44,11 +44,8 @@
   window.JSONStudioNav = { TOOLS, GROUP_NAMES, PRESENT_ICON };
 
   const NAV_LINKS = [
-    { href: 'index.html', label: 'Home' },
     { label: 'Tools', children: TOOLS, allHref: 'tools.html' },
-    { href: 'presentation.html', label: 'Presentation', navIcon: PRESENT_ICON, highlight: true },
-    { href: 'https://www.msdevbuild.com/', label: 'MSDEVBUILD Blog', external: true },
-    { href: 'https://github.com/jssuthahar', label: 'GitHub', external: true }
+    { href: 'presentation.html', label: 'Presentation', navIcon: PRESENT_ICON, highlight: true }
   ];
 
   const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
@@ -92,7 +89,7 @@
     el.innerHTML = `
       <header class="site-header">
         <div class="container bar">
-          <a class="brandmark" href="index.html" style="text-decoration:none;">
+          <a class="brandmark" href="format.html" style="text-decoration:none;">
             <div class="dot">{ }</div>
             <div class="word">JSON <span>Studio</span></div>
           </a>
@@ -110,15 +107,11 @@
           </div>
         </div>
         <div id="mobile-nav">
-          <a href="index.html">Home</a>
           <a href="tools.html">All tools</a>
           <a class="nav-highlight" href="presentation.html">${PRESENT_ICON}Presentation mode</a>
           ${Object.keys(GROUP_NAMES).map((g) => `
             <div class="mobile-nav-head">${GROUP_NAMES[g]}</div>
             ${TOOLS.filter((t) => t.group === g).map((t) => linkHTML(t)).join('')}`).join('')}
-          <div class="mobile-nav-head">Elsewhere</div>
-          <a href="https://www.msdevbuild.com/" target="_blank" rel="noopener">MSDEVBUILD Blog</a>
-          <a href="https://github.com/jssuthahar" target="_blank" rel="noopener">GitHub</a>
         </div>
       </header>
     `;
@@ -204,7 +197,7 @@
 
   function renderPalette(query) {
     const q = (query || '').trim().toLowerCase();
-    const entries = TOOLS.concat([{ href: 'tools.html', label: 'All tools', group: 'site' }, { href: 'index.html', label: 'Home', group: 'site' }]);
+    const entries = TOOLS.concat([{ href: 'tools.html', label: 'All tools', group: 'site' }]);
     matches = q
       ? entries.filter((t) => (t.label + ' ' + t.href + ' ' + (GROUP_NAMES[t.group] || '')).toLowerCase().includes(q))
       : entries;
@@ -318,37 +311,14 @@
               <div class="dot">{ }</div>
               <div class="word">JSON <span>Studio</span></div>
             </div>
-            <p>Free, client-side JSON tooling from MSDEVBUILD — built by Suthahar Jegatheesan, Senior Solutions Architect focused on Azure, AI and mobile architecture.</p>
-            <div class="socials">
-              <a href="https://my.linkedin.com/in/jssuthahar" target="_blank" rel="noopener">LinkedIn</a>
-              <a href="https://github.com/jssuthahar" target="_blank" rel="noopener">GitHub</a>
-              <a href="https://www.youtube.com/@MSDEVBUILD" target="_blank" rel="noopener">YouTube</a>
-            </div>
+            <p>Client-side JSON tools for formatting, validating, comparing and converting data in the browser.</p>
           </div>
           <div class="footer-col"><h4>${GROUP_NAMES.inspect}</h4><ul>${col('inspect')}</ul></div>
           <div class="footer-col"><h4>${GROUP_NAMES.schema}</h4><ul>${col('schema')}</ul></div>
           <div class="footer-col"><h4>${GROUP_NAMES.convert}</h4><ul>${col('convert')}</ul></div>
-          <div class="footer-col">
-            <h4>Project</h4>
-            <ul>
-              <li><a href="about.html">About JSON Studio</a></li>
-              <li><a href="tools.html">All tools</a></li>
-              <li><a class="foot-highlight" href="presentation.html">${PRESENT_ICON}Presentation mode</a></li>
-              <li><a href="index.html#install">Install the app</a></li>
-              <li><a href="CONTRIBUTING.md">Contributing guide</a></li>
-              <li><a href="https://github.com/jssuthahar" target="_blank" rel="noopener">Source on GitHub</a></li>
-              <li><a href="https://www.msdevbuild.com/" target="_blank" rel="noopener">MSDEVBUILD Blog</a></li>
-              <li><a href="https://www.msdevbuild.com/p/contact-suthahar-jegatheesan-js.html" target="_blank" rel="noopener">Contact</a></li>
-            </ul>
-          </div>
         </div>
         <div class="container footer-bottom">
-          <span>&copy; ${year} MSDEVBUILD &middot; Suthahar Jegatheesan. All rights reserved.</span>
-          <span class="footer-legal">
-            <a href="privacy.html">Privacy &amp; data protection</a>
-            <a href="terms.html">Terms of use</a>
-            <a href="about.html">About</a>
-          </span>
+          <span>&copy; ${year} JSON Studio.</span>
         </div>
       </footer>
     `;

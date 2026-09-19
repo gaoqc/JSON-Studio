@@ -10,7 +10,7 @@
   activate, so a stale tool can't linger.
 */
 
-const CACHE = 'json-studio-v9';
+const CACHE = 'json-studio-v10';
 
 const PRECACHE = [
   './',
@@ -127,7 +127,7 @@ self.addEventListener('fetch', (event) => {
           caches.open(CACHE).then((c) => c.put(req, copy)).catch(() => {});
           return res;
         })
-        .catch(() => caches.match(req).then((hit) => hit || caches.match('index.html')))
+        .catch(() => caches.match(req).then((hit) => hit || caches.match('format.html')))
     );
     return;
   }

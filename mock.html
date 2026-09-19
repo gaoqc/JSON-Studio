@@ -94,7 +94,6 @@
     <div class="container tool-topbar">
       <h1>Mock data generator</h1>
       <p class="tt-sub">Turn a JSON Schema into realistic, seeded sample records.</p>
-      <a class="tt-about" href="#about">About &amp; FAQ ↓</a>
     </div>
     <div class="container">
       <div class="opt-bar">
@@ -157,107 +156,6 @@
     </section>
   </div>
 </main>
-
-
-
-
-
-
-
-
-
-
-<section class="tool-home" id="about">
-  <div class="container">
-    <div class="th-more">Reference</div>
-    <header class="th-head">
-      <div class="kicker">Mock data generator</div>
-      <h2>About the mock data generator</h2>
-      <p>Tests and demos need data that looks real without being real. Feed this a JSON Schema and it produces records that satisfy it — respecting enums, const, numeric and length bounds, and formats such as email, uuid and date-time. Field names are used as hints too, so a field called "city" gets a city rather than a random word. The seed makes it repeatable: the same schema and seed always produce the same data, which is what makes the output usable in a committed fixture.</p>
-      <div class="cta-row">
-        <a class="btn-primary" href="#top">Use the tool ↑</a>
-        <a class="btn-secondary btn-present" href="presentation.html"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M12 17v3M9.5 20h5"/><path d="m10.6 8.8 4 2.7-4 2.7z" fill="currentColor" stroke="none"/></svg> Present it</a>
-      </div>
-    </header>
-
-    <div class="th-features">
-      <div class="th-feature">
-        <div class="fi">01</div>
-        <h3>Schema in, data out</h3>
-        <p>Feed it a JSON Schema and get records that satisfy it, ready for tests, demos and stubs.</p>
-      </div>
-      <div class="th-feature">
-        <div class="fi">02</div>
-        <h3>Repeatable by seed</h3>
-        <p>The same schema and seed always produce the same data, so output can live in a committed fixture.</p>
-      </div>
-      <div class="th-feature">
-        <div class="fi">03</div>
-        <h3>Field-aware values</h3>
-        <p>A field called email looks like an email, city like a city, createdAt like a timestamp.</p>
-      </div>
-      <div class="th-feature">
-        <div class="fi">04</div>
-        <h3>Constraints respected</h3>
-        <p>Enums, const, numeric and length bounds, array sizes, required versus optional, and local $ref.</p>
-      </div>
-    </div>
-
-    <div class="seo-grid">
-      <div class="seo-main">
-        <h3 id="how">How to use it</h3>
-        <ol class="seo-steps">
-          <li>Paste a JSON Schema (or generate one first with the schema generator).</li>
-          <li>Choose how many records, the array size, and whether optional fields are included.</li>
-          <li>Change the seed for different data, or keep it to reproduce the same set exactly.</li>
-        </ol>
-
-        <h3 id="faq">Questions</h3>
-        <div class="faq">
-          <details>
-            <summary>Why does it produce the same data every time?</summary>
-            <div class="faq-body"><p>By design — the generator is seeded rather than random. Change the seed for a different set; keep it to get a byte-identical result you can commit as a test fixture.</p></div>
-          </details>
-          <details>
-            <summary>Does it respect my constraints?</summary>
-            <div class="faq-body"><p>It respects enum, const, formats, minimum/maximum, minLength/maxLength, minItems/maxItems, uniqueItems, required versus optional, and $ref to local pointers. Regex patterns are not solved — a pattern-constrained string gets a placeholder.</p></div>
-          </details>
-          <details>
-            <summary>Can I generate a large dataset?</summary>
-            <div class="faq-body"><p>Up to a hundred records per run in the picker. For more, generate and repeat with different seeds, or convert the result to JSONL for line-based tooling.</p></div>
-          </details>
-        </div>
-      </div>
-
-      <aside class="seo-side">
-        <div class="seo-card" id="share">
-          <h3>Share this tool</h3>
-          <p>Send it to a colleague — the link only, never anything you have pasted in.</p>
-          <div data-share data-share-title="Mock data generator — JSON Studio"></div>
-        </div>
-        <div class="seo-card">
-          <h3 class="with-ico"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M12 17v3M9.5 20h5"/><path d="m10.6 8.8 4 2.7-4 2.7z" fill="currentColor" stroke="none"/></svg> Present this tool</h3>
-          <p>Demoing to a client or a class? Press <kbd>Shift</kbd><kbd>P</kbd> for full-screen presentation mode — chrome hidden, type scaled up, laser pointer included.</p>
-          <a class="seo-link" href="presentation.html">How presentation mode works →</a>
-        </div>
-        <div class="seo-card">
-          <h3>Related tools</h3>
-          <ul class="seo-related">
-            <li><a href="json-schema.html"><span class="ri">Sχ</span>Schema generator</a></li>
-            <li><a href="validate.html"><span class="ri">✓</span>Schema validator</a></li>
-            <li><a href="jsonl.html"><span class="ri">≡</span>JSONL ⇄ JSON</a></li>
-          </ul>
-          <a class="seo-link" href="tools.html">All 14 tools →</a>
-        </div>
-        <div class="seo-card quiet">
-          <h3>Private by construction</h3>
-          <p>No backend exists. Everything on this page runs in your browser, so nothing you paste is uploaded, logged or retained.</p>
-          <a class="seo-link" href="privacy.html">Read the privacy policy →</a>
-        </div>
-      </aside>
-    </div>
-  </div>
-</section>
 
 <div id="site-footer"></div>
 

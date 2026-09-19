@@ -2,7 +2,7 @@
   "name": "JSON Studio — free JSON tools",
   "short_name": "JSON Studio",
   "description": "Fourteen free JSON tools that run entirely in your browser: formatter, diagram, diff, JSONPath, schema generator and validator, mock data, code generation, CSV, YAML, XML, JSONL, SQL and JWT.",
-  "start_url": "./index.html",
+  "start_url": "./format.html",
   "scope": "./",
   "id": "/",
   "display": "standalone",

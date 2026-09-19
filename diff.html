@@ -94,7 +94,6 @@
     <div class="container tool-topbar">
       <h1>JSON diff</h1>
       <p class="tt-sub">Structural, path-by-path comparison of two payloads — key order ignored.</p>
-      <a class="tt-about" href="#about">About &amp; FAQ ↓</a>
     </div>
     <div class="container">
       <div class="opt-bar">
@@ -152,107 +151,6 @@
     </section>
   </div>
 </main>
-
-
-
-
-
-
-
-
-
-
-<section class="tool-home" id="about">
-  <div class="container">
-    <div class="th-more">Reference</div>
-    <header class="th-head">
-      <div class="kicker">JSON diff</div>
-      <h2>About the JSON diff tool</h2>
-      <p>A text diff on two payloads is nearly useless: reformat one of them and every line changes. This compares them structurally, so key order is irrelevant and only real differences are reported, each with the path that reached it. The same comparison can be exported as an RFC 6902 JSON Patch to send to a PATCH endpoint, or an RFC 7386 Merge Patch.</p>
-      <div class="cta-row">
-        <a class="btn-primary" href="#top">Use the tool ↑</a>
-        <a class="btn-secondary btn-present" href="presentation.html"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M12 17v3M9.5 20h5"/><path d="m10.6 8.8 4 2.7-4 2.7z" fill="currentColor" stroke="none"/></svg> Present it</a>
-      </div>
-    </header>
-
-    <div class="th-features">
-      <div class="th-feature">
-        <div class="fi">01</div>
-        <h3>Structural, not textual</h3>
-        <p>Key order is ignored, so reformatting or reordering a payload is correctly reported as no change.</p>
-      </div>
-      <div class="th-feature">
-        <div class="fi">02</div>
-        <h3>Every change has a path</h3>
-        <p>Each difference names the exact location inside the document, so you know where to look.</p>
-      </div>
-      <div class="th-feature">
-        <div class="fi">03</div>
-        <h3>Array strategies</h3>
-        <p>Compare arrays by index, or as unordered bags where a reordered list counts as identical.</p>
-      </div>
-      <div class="th-feature">
-        <div class="fi">04</div>
-        <h3>Patch output</h3>
-        <p>Export the comparison as an RFC 6902 JSON Patch or an RFC 7386 Merge Patch, ready to send.</p>
-      </div>
-    </div>
-
-    <div class="seo-grid">
-      <div class="seo-main">
-        <h3 id="how">How to use it</h3>
-        <ol class="seo-steps">
-          <li>Paste the original into the first pane and the changed version into the second.</li>
-          <li>Choose whether arrays are compared by index or treated as unordered sets.</li>
-          <li>Read the change list, or switch the output to JSON Patch or Merge Patch and copy it.</li>
-        </ol>
-
-        <h3 id="faq">Questions</h3>
-        <div class="faq">
-          <details>
-            <summary>Does key order count as a difference?</summary>
-            <div class="faq-body"><p>No. Two objects with the same keys and values are identical regardless of the order they were written in, which is what the JSON specification says and what a text diff gets wrong.</p></div>
-          </details>
-          <details>
-            <summary>What is the difference between JSON Patch and Merge Patch?</summary>
-            <div class="faq-body"><p>JSON Patch (RFC 6902) is a list of add/remove/replace operations with pointers — precise, and able to target array elements. Merge Patch (RFC 7386) is a partial document where null means "delete this key" — simpler, but it replaces arrays wholesale.</p></div>
-          </details>
-          <details>
-            <summary>Can I compare two API responses?</summary>
-            <div class="faq-body"><p>Yes, and it is the common case: paste yesterday's response and today's to see exactly what a deployment changed.</p></div>
-          </details>
-        </div>
-      </div>
-
-      <aside class="seo-side">
-        <div class="seo-card" id="share">
-          <h3>Share this tool</h3>
-          <p>Send it to a colleague — the link only, never anything you have pasted in.</p>
-          <div data-share data-share-title="JSON diff — JSON Studio"></div>
-        </div>
-        <div class="seo-card">
-          <h3 class="with-ico"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M12 17v3M9.5 20h5"/><path d="m10.6 8.8 4 2.7-4 2.7z" fill="currentColor" stroke="none"/></svg> Present this tool</h3>
-          <p>Demoing to a client or a class? Press <kbd>Shift</kbd><kbd>P</kbd> for full-screen presentation mode — chrome hidden, type scaled up, laser pointer included.</p>
-          <a class="seo-link" href="presentation.html">How presentation mode works →</a>
-        </div>
-        <div class="seo-card">
-          <h3>Related tools</h3>
-          <ul class="seo-related">
-            <li><a href="format.html"><span class="ri">⌗</span>Formatter & validator</a></li>
-            <li><a href="validate.html"><span class="ri">✓</span>Schema validator</a></li>
-            <li><a href="tool.html"><span class="ri">{ }</span>JSON to diagram</a></li>
-          </ul>
-          <a class="seo-link" href="tools.html">All 14 tools →</a>
-        </div>
-        <div class="seo-card quiet">
-          <h3>Private by construction</h3>
-          <p>No backend exists. Everything on this page runs in your browser, so nothing you paste is uploaded, logged or retained.</p>
-          <a class="seo-link" href="privacy.html">Read the privacy policy →</a>
-        </div>
-      </aside>
-    </div>
-  </div>
-</section>
 
 <div id="site-footer"></div>
 

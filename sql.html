@@ -94,7 +94,6 @@
     <div class="container tool-topbar">
       <h1>JSON to SQL</h1>
       <p class="tt-sub">CREATE TABLE and INSERT statements for Postgres, MySQL, SQL Server or SQLite.</p>
-      <a class="tt-about" href="#about">About &amp; FAQ ↓</a>
     </div>
     <div class="container">
       <div class="opt-bar">
@@ -157,107 +156,6 @@
     </section>
   </div>
 </main>
-
-
-
-
-
-
-
-
-
-
-<section class="tool-home" id="about">
-  <div class="container">
-    <div class="th-more">Reference</div>
-    <header class="th-head">
-      <div class="kicker">JSON to SQL</div>
-      <h2>About the JSON to SQL generator</h2>
-      <p>Getting a JSON export into a database usually means writing the DDL by hand. This infers column types from every row rather than the first — a column holding 1, 2 and 3.5 becomes decimal, and a column that is ever missing or null becomes nullable — then emits a CREATE TABLE and the INSERT statements to load it, quoted correctly for your dialect.</p>
-      <div class="cta-row">
-        <a class="btn-primary" href="#top">Use the tool ↑</a>
-        <a class="btn-secondary btn-present" href="presentation.html"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M12 17v3M9.5 20h5"/><path d="m10.6 8.8 4 2.7-4 2.7z" fill="currentColor" stroke="none"/></svg> Present it</a>
-      </div>
-    </header>
-
-    <div class="th-features">
-      <div class="th-feature">
-        <div class="fi">01</div>
-        <h3>Four dialects</h3>
-        <p>PostgreSQL, MySQL, SQL Server and SQLite, each with correct quoting, types and boolean literals.</p>
-      </div>
-      <div class="th-feature">
-        <div class="fi">02</div>
-        <h3>Types from every row</h3>
-        <p>A column holding 1, 2 and 3.5 becomes decimal; a column ever missing becomes nullable.</p>
-      </div>
-      <div class="th-feature">
-        <div class="fi">03</div>
-        <h3>CREATE plus INSERT</h3>
-        <p>Table definition and the statements to load it, chunked for large sets.</p>
-      </div>
-      <div class="th-feature">
-        <div class="fi">04</div>
-        <h3>Nested data handled</h3>
-        <p>Objects and arrays are stored as JSON text columns, which is what these databases want anyway.</p>
-      </div>
-    </div>
-
-    <div class="seo-grid">
-      <div class="seo-main">
-        <h3 id="how">How to use it</h3>
-        <ol class="seo-steps">
-          <li>Paste an array of JSON objects.</li>
-          <li>Pick the dialect and table name, and whether columns are converted to snake_case.</li>
-          <li>Copy the SQL, or download it as a .sql file.</li>
-        </ol>
-
-        <h3 id="faq">Questions</h3>
-        <div class="faq">
-          <details>
-            <summary>Which databases are supported?</summary>
-            <div class="faq-body"><p>PostgreSQL, MySQL, SQL Server and SQLite. Identifier quoting, boolean literals and type names follow each dialect — JSONB for Postgres, JSON for MySQL, NVARCHAR(MAX) for SQL Server, TEXT for SQLite.</p></div>
-          </details>
-          <details>
-            <summary>What happens to nested objects and arrays?</summary>
-            <div class="faq-body"><p>They are stored as JSON text in a single column, which is what all four databases would have you do anyway. Flatten them first with the CSV tool if you want separate columns.</p></div>
-          </details>
-          <details>
-            <summary>Is the generated SQL safe to run?</summary>
-            <div class="faq-body"><p>Values are inlined as escaped literals, which is fine for seeding and fixtures. Do not build a pipeline that inlines untrusted input this way — use parameterised queries for anything user-driven.</p></div>
-          </details>
-        </div>
-      </div>
-
-      <aside class="seo-side">
-        <div class="seo-card" id="share">
-          <h3>Share this tool</h3>
-          <p>Send it to a colleague — the link only, never anything you have pasted in.</p>
-          <div data-share data-share-title="JSON to SQL — JSON Studio"></div>
-        </div>
-        <div class="seo-card">
-          <h3 class="with-ico"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M12 17v3M9.5 20h5"/><path d="m10.6 8.8 4 2.7-4 2.7z" fill="currentColor" stroke="none"/></svg> Present this tool</h3>
-          <p>Demoing to a client or a class? Press <kbd>Shift</kbd><kbd>P</kbd> for full-screen presentation mode — chrome hidden, type scaled up, laser pointer included.</p>
-          <a class="seo-link" href="presentation.html">How presentation mode works →</a>
-        </div>
-        <div class="seo-card">
-          <h3>Related tools</h3>
-          <ul class="seo-related">
-            <li><a href="csv.html"><span class="ri">J↔C</span>JSON ⇄ CSV</a></li>
-            <li><a href="jsonl.html"><span class="ri">≡</span>JSONL ⇄ JSON</a></li>
-            <li><a href="code.html"><span class="ri"></></span>JSON to code</a></li>
-          </ul>
-          <a class="seo-link" href="tools.html">All 14 tools →</a>
-        </div>
-        <div class="seo-card quiet">
-          <h3>Private by construction</h3>
-          <p>No backend exists. Everything on this page runs in your browser, so nothing you paste is uploaded, logged or retained.</p>
-          <a class="seo-link" href="privacy.html">Read the privacy policy →</a>
-        </div>
-      </aside>
-    </div>
-  </div>
-</section>
 
 <div id="site-footer"></div>
 
