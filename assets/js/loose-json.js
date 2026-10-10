@@ -31,7 +31,7 @@
         continue;
       }
 
-      if (ch === ',' || ch === ';' || ch === '\n' || ch === '\r' || ch === '&') {
+      if (ch === ',' || ch === '，' || ch === ';' || ch === '\n' || ch === '\r' || ch === '&') {
         if (buf.trim()) parts.push(buf.trim());
         buf = '';
         continue;
