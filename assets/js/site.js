@@ -12,24 +12,27 @@
 (function () {
   const TOOLS = [
     /* TOOLS:start */
-    { href: 'format.html', label: 'Formatter & validator', group: 'inspect', icon: '⌗' },
-    { href: 'tool.html', label: 'JSON to diagram', group: 'inspect', icon: '{ }' },
+    { href: 'jsonl.html', label: 'JSONL ⇄ JSON', group: 'convert', icon: '≡' },
+    { href: 'url-param.html', label: 'URL params ⇄ JSON', group: 'convert', icon: '?=' },
+    { href: 'loose-json.html', label: 'Loose string → JSON', group: 'convert', icon: '≈J' },
+    { href: 'sql.html', label: 'JSON to SQL', group: 'convert', icon: 'SQL' },
+    { href: 'csv.html', label: 'JSON ⇄ CSV', group: 'convert', icon: 'J↔C' },
+    { href: 'xml.html', label: 'JSON ⇄ XML', group: 'convert', icon: 'X↔J' },
+    { href: 'yaml-json.html', label: 'YAML ⇄ JSON', group: 'convert', icon: 'Y↔J' },
+    { href: 'code.html', label: 'JSON to code', group: 'convert', icon: '</>' },
+    { href: 'key-transform.html', label: 'JSON key transformer', group: 'convert', icon: 'K↺' },
+    { href: 'format.html', label: 'JSON formatter & validator', group: 'inspect', icon: '⌗' },
     { href: 'diff.html', label: 'JSON diff', group: 'inspect', icon: 'A|B' },
     { href: 'jsonpath.html', label: 'JSONPath tester', group: 'inspect', icon: '$..' },
+    { href: 'tool.html', label: 'JSON to diagram', group: 'inspect', icon: '{ }' },
     { href: 'jwt.html', label: 'JWT decoder', group: 'inspect', icon: 'JWT' },
-    { href: 'json-schema.html', label: 'Schema generator', group: 'schema', icon: 'Sχ' },
-    { href: 'validate.html', label: 'Schema validator', group: 'schema', icon: '✓' },
+    { href: 'json-schema.html', label: 'JSON Schema generator', group: 'schema', icon: 'Sχ' },
     { href: 'mock.html', label: 'Mock data generator', group: 'schema', icon: '⁂' },
-    { href: 'code.html', label: 'JSON to code', group: 'convert', icon: '</>' },
-    { href: 'csv.html', label: 'JSON ⇄ CSV', group: 'convert', icon: 'J↔C' },
-    { href: 'yaml-json.html', label: 'YAML ⇄ JSON', group: 'convert', icon: 'Y↔J' },
-    { href: 'xml.html', label: 'JSON ⇄ XML', group: 'convert', icon: 'X↔J' },
-    { href: 'jsonl.html', label: 'JSONL ⇄ JSON', group: 'convert', icon: '≡' },
-    { href: 'sql.html', label: 'JSON to SQL', group: 'convert', icon: 'SQL' }
+    { href: 'validate.html', label: 'JSON Schema validator', group: 'schema', icon: '✓' }
     /* TOOLS:end */
   ];
 
-  const GROUP_NAMES = { inspect: 'Inspect & debug', schema: 'Schema & test data', convert: 'Convert & export' };
+  const GROUP_NAMES = { convert: 'Convert & export', inspect: 'Inspect & debug', schema: 'Schema & test data' };
 
   // Presentation mode is the feature worth pointing at, so it gets a mark of
   // its own — a screen with a play head — reused by the nav, the mobile menu,

@@ -1,7 +1,7 @@
 {
   "name": "JSON Studio — free JSON tools",
   "short_name": "JSON Studio",
-  "description": "Fourteen free JSON tools that run entirely in your browser: formatter, diagram, diff, JSONPath, schema generator and validator, mock data, code generation, CSV, YAML, XML, JSONL, SQL and JWT.",
+  "description": "Seventeen free JSON tools that run entirely in your browser: formatter, diagram, diff, JSONPath, schema generator and validator, mock data, code generation, key transformation, CSV, URL params, loose strings, YAML, XML, JSONL, SQL and JWT.",
   "start_url": "./format.html",
   "scope": "./",
   "id": "/",
@@ -22,6 +22,9 @@
     { "name": "Formatter & validator", "short_name": "Format", "url": "./format.html", "icons": [{ "src": "assets/img/icon-192.png", "sizes": "192x192" }] },
     { "name": "JSON to diagram", "short_name": "Diagram", "url": "./tool.html", "icons": [{ "src": "assets/img/icon-192.png", "sizes": "192x192" }] },
     { "name": "JSON diff", "short_name": "Diff", "url": "./diff.html", "icons": [{ "src": "assets/img/icon-192.png", "sizes": "192x192" }] },
+    { "name": "URL params to JSON", "short_name": "Params", "url": "./url-param.html", "icons": [{ "src": "assets/img/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Loose string to JSON", "short_name": "Loose", "url": "./loose-json.html", "icons": [{ "src": "assets/img/icon-192.png", "sizes": "192x192" }] },
+    { "name": "JSON key transformer", "short_name": "Keys", "url": "./key-transform.html", "icons": [{ "src": "assets/img/icon-192.png", "sizes": "192x192" }] },
     { "name": "Presentation mode", "short_name": "Present", "url": "./presentation.html", "icons": [{ "src": "assets/img/icon-192.png", "sizes": "192x192" }] }
   ]
 }

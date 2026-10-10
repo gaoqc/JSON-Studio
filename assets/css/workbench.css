@@ -6,7 +6,7 @@
   take the whole window. Loaded only on tool pages.
 */
 
-:root{ --rail-w:52px; }
+:root{ --rail-w:224px; }
 
 /* The rail is fixed, so the page just gets padded out of its way. */
 body.wb{padding-left:var(--rail-w);}
@@ -17,32 +17,37 @@ body.wb .site-header{padding-left:0;}
 .wb-rail{
   position:fixed;top:0;left:0;bottom:0;width:var(--rail-w);z-index:60;
   background:var(--panel-2);border-right:1px solid var(--border);
-  display:flex;flex-direction:column;align-items:center;
-  padding:8px 0;gap:2px;overflow-y:auto;overscroll-behavior:contain;
+  display:flex;flex-direction:column;align-items:stretch;
+  padding:10px 8px;gap:2px;overflow-y:auto;overscroll-behavior:contain;
   scrollbar-width:none;
 }
 .wb-rail::-webkit-scrollbar{display:none;}
 
 .wb-brand{
-  width:32px;height:32px;border-radius:9px;flex-shrink:0;
+  height:38px;border-radius:7px;flex-shrink:0;
   background:linear-gradient(135deg,var(--blue),var(--navy));
-  display:flex;align-items:center;justify-content:center;
+  display:flex;align-items:center;gap:9px;
   color:#fff;font-weight:700;font-size:12px;font-family:'JetBrains Mono',monospace;
-  margin-bottom:8px;text-decoration:none;
+  margin:0 4px 8px;padding:0 10px;text-decoration:none;
 }
+.wb-brand strong{font:700 13px 'Inter',system-ui,sans-serif;letter-spacing:0;}
 .wb-brand:hover{text-decoration:none;filter:brightness(1.08);}
 
-.wb-sep{width:24px;height:1px;background:var(--border);margin:7px 0;flex-shrink:0;}
+.wb-sep{height:1px;background:var(--border);margin:7px 4px;flex-shrink:0;}
 .wb-spacer{flex:1;min-height:8px;}
+.wb-group{display:flex;flex-direction:column;gap:1px;}
+.wb-group-title{padding:6px 10px 4px;color:var(--text-faint);font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;}
 
 .wb-btn{
   position:relative;flex-shrink:0;
-  width:38px;height:38px;border-radius:9px;border:1px solid transparent;background:transparent;
-  display:flex;align-items:center;justify-content:center;
+  width:100%;min-height:34px;border-radius:6px;border:1px solid transparent;background:transparent;
+  display:flex;align-items:center;justify-content:flex-start;gap:9px;
   font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;
-  color:var(--text-faint);cursor:pointer;padding:0;text-decoration:none;
+  color:var(--text-faint);cursor:pointer;padding:0 10px;text-decoration:none;
   transition:background .12s, color .12s;
 }
+.wb-icon{width:28px;text-align:center;flex:0 0 28px;}
+.wb-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:500 12px 'Inter',system-ui,sans-serif;letter-spacing:0;}
 .wb-btn:hover{background:var(--blue-tint);color:var(--blue);text-decoration:none;border-color:transparent;}
 /* VS Code's active-item marker: a bar on the leading edge. An inset shadow
    rather than a positioned pseudo-element, because the rail scrolls and would
@@ -50,6 +55,7 @@ body.wb .site-header{padding-left:0;}
 .wb-btn.active{background:var(--blue-tint);color:var(--blue);box-shadow:inset 3px 0 0 var(--blue);}
 .wb-btn.on{background:var(--blue);color:#fff;}
 .wb-btn.on:hover{background:var(--blue-dark);color:#fff;}
+#wb-sidebar-btn,.wb-present{justify-content:center;width:38px;margin:0 4px;padding:0;}
 
 /* Tooltips — the rail is icon-only, so every button needs a label on hover.
    One shared element, positioned by JS and fixed to the viewport: the rail

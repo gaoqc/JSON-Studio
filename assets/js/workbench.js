@@ -129,12 +129,16 @@
     const toolsHTML = groups.map((g, gi) => {
       const items = nav.TOOLS.filter((t) => t.group === g).map((t) => `
         <a class="wb-btn${t.href === here ? ' active' : ''}" href="${t.href}"
-           data-label="${t.label}" aria-label="${t.label}"${t.href === here ? ' aria-current="page"' : ''}>${t.icon}</a>`).join('');
-      return items + (gi < groups.length - 1 ? '<span class="wb-sep"></span>' : '');
+           data-label="${t.label}" aria-label="${t.label}"${t.href === here ? ' aria-current="page"' : ''}>
+          <span class="wb-icon" aria-hidden="true">${t.icon}</span><span class="wb-label">${t.label}</span>
+        </a>`).join('');
+      return `<section class="wb-group" aria-label="${nav.GROUP_NAMES[g]}">
+        <div class="wb-group-title">${nav.GROUP_NAMES[g]}</div>${items}
+      </section>` + (gi < groups.length - 1 ? '<span class="wb-sep"></span>' : '');
     }).join('');
 
     rail.innerHTML = `
-      <a class="wb-brand" href="format.html" data-label="JSON formatter" aria-label="JSON formatter">{ }</a>
+      <a class="wb-brand" href="format.html" data-label="JSON formatter" aria-label="JSON formatter"><span>{ }</span><strong>JSON Studio</strong></a>
       <button class="wb-btn" id="wb-sidebar-btn" type="button"
               data-label="Toggle side panel &nbsp;<kbd>${modLabel}B</kbd>" aria-label="Toggle side panel">◧</button>
       <span class="wb-sep"></span>

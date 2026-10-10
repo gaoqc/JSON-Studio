@@ -17,6 +17,10 @@
 .opt select{padding:6px 10px;font-size:12.5px;}
 .opt input[type="checkbox"]{width:15px;height:15px;accent-color:var(--blue);cursor:pointer;margin:0;}
 .opt input[type="text"]{padding:6px 10px;font-size:12.5px;min-width:160px;}
+.opt-label{font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-faint);}
+.key-transform-options{display:flex;flex-wrap:wrap;gap:6px 10px;}
+.key-transform-options label{display:inline-flex;align-items:center;gap:3px;font-size:12px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--text-dim);cursor:pointer;white-space:nowrap;}
+.key-transform-options input[type="checkbox"]{flex:0 0 auto;}
 .opt-sep{width:1px;height:22px;background:var(--border);}
 
 .convert-grid{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:540px;}

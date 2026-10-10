@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Loose String to JSON | JSON Studio</title>
+<meta name="description" content="Best-effort conversion from loose key=value strings to JSON in your browser.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://jsonstudio.msdevbuild.com/loose-json.html">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0078d4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#12151c" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="JSON Studio">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/convert.css">
+<link rel="stylesheet" href="assets/css/present.css">
+<link rel="stylesheet" href="assets/css/workbench.css">
+<link rel="stylesheet" href="assets/css/tool-focus.css">
+<link rel="stylesheet" href="assets/css/editor.css">
+<script>(function(){try{var t=localStorage.getItem('json-studio-theme');if(!t&&window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+
+<div id="site-header"></div>
+<span id="top"></span>
+
+<main class="convert-shell">
+  <div class="convert-head">
+    <div class="container tool-topbar">
+      <h1>Loose string → JSON</h1>
+      <p class="tt-sub">Best-effort conversion for text like <code>id=1001,name=zhangsan,age=25</code>.</p>
+    </div>
+  </div>
+  <div class="convert-grid">
+    <section class="pane">
+      <div class="pane-head">
+        <div class="pane-title">Loose input</div>
+        <button id="btn-sample">Load sample</button>
+        <button id="btn-upload">Upload</button>
+        <button id="btn-clear">Clear</button>
+        <input type="file" id="file-input" accept=".txt,.log,.env" style="display:none;">
+      </div>
+      <div class="pane-body">
+        <textarea id="input" class="code-area" spellcheck="false" placeholder="id= 1001,name=zhangsan,age=25"></textarea>
+      </div>
+      <div class="pane-status" id="in-status">Waiting for input.</div>
+    </section>
+
+    <section class="pane">
+      <div class="pane-head">
+        <div class="pane-title">JSON output</div>
+        <button class="primary" id="btn-run">Convert</button>
+        <button id="btn-copy">Copy</button>
+        <button id="btn-download">Download</button>
+      </div>
+      <div class="pane-body">
+        <textarea id="output" class="code-area" spellcheck="false" readonly placeholder="JSON output appears here."></textarea>
+        <p class="note">Supports comma, semicolon, ampersand and new-line separators. Values are kept as strings.</p>
+      </div>
+      <div class="pane-status" id="out-status"></div>
+    </section>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="assets/js/site.js"></script>
+<script src="assets/js/payload-link.js"></script>
+<script src="assets/js/tool-kit.js"></script>
+<script src="assets/js/loose-json.js"></script>
+<script src="assets/js/present.js"></script>
+<script src="assets/js/workbench.js"></script>
+<script src="assets/js/history.js"></script>
+<script src="assets/js/gutter.js"></script>
+<script src="assets/js/editor.js"></script>
+<script src="assets/js/share.js"></script>
+</body>
+</html>
